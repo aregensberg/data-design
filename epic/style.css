@@ -2,3 +2,8 @@ img {
 	display: flex;
 	Height: 15em;
 }
+
+.dia{
+	padding:3em 3em;
+	border: solid black;
+}
