@@ -2,9 +2,50 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Title</title>
+	<title>Data Design Project</title>
 </head>
+<header> Conceptual Model and Entity Relationship Diagram </header>
 <body>
+
+<h3>Entities and Attributes</h3>
+<p>Profile:</p>
+ <ul>
+	 <li>profileId (primary key)</li>
+	 <li>profileActivationToken (User Authentication)</li>
+	 <li>profileEmail</li>
+	 <li>profileHash (Account Password)</li>
+	 <li>profilePicture</li>
+ </ul>
+
+<p>Item: (strong)</p>
+ <ul>
+	<li>itemId (primary key)
+	<li>itemImage</li>
+	<li>itemDate</li>
+	<li>itemPrice</li>
+ </ul>
+
+<p>Stories: (strong)</p>
+ <ul>
+	 <li>storiesID (primary key)</li>
+	 <li>storiesImage</li>
+	 <li>storiesContent</li>
+	 <li>storiesDate</li>
+ </ul>
+
+<p>Highlights: (weak)</p>
+ <ul>
+	 <li>hightlightsItemsId (foreign key)</li>
+	 <li>highlightsStoriesId (foreign key)</li>
+ </ul>
+
+<p>Relationships:</p>
+ <ul>
+	 <li>One profile belongs to one person (1 to 1)</li>
+	 <li>One profile can have many stories posted ( 1 to many)</li>
+	 <li>Many stories can be turned into many highlights (many to many)</li>
+ </ul>
+
 <p>
 	<a href="index.html"> Main Page </a>
 </p>
