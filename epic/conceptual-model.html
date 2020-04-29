@@ -17,6 +17,14 @@
 	 <li>profileImage</li>
  </ul>
 
+<p>Story:(strong)</p>
+<ul>
+	<li>storyId (primary key)</li>
+	<li>storyProfileId(foreign key)</li>
+	<li>storyContent</li>
+	<li>storyDate</li>
+</ul>
+
 <p>Item:(strong)</p>
  <ul>
 	<li>itemId (primary key)
@@ -25,16 +33,9 @@
 	<li>itemPrice</li>
  </ul>
 
-<p>Story:(strong)</p>
- <ul>
-	 <li>storyId (primary key)</li>
-	 <li>storyContent</li>
-	 <li>storyDate</li>
- </ul>
-
 <p>Highlight:(weak)</p>
  <ul>
-	 <li>highLightProfileId (foreign key</li>
+	 <li>highLightProfileId (foreign key)</li>
 	 <li>hightlightItemsId (foreign key)</li>
 	 <li>highlightStoryId (foreign key)</li>
  </ul>
@@ -42,7 +43,7 @@
 <p>Relationships:</p>
  <ul>
 	 <li>One profile can have many stories posted (1 to many)</li>
-	 <li>One item belongs to one story (1 to 1)</li>
+	 <li>One story can have one or more items (1 mandatory to 1 optional)</li>
 	 <li>Many stories can be turned into many highlights (many to many)</li>
  </ul>
 
