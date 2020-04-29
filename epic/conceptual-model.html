@@ -25,18 +25,19 @@
 	<li>itemPrice</li>
  </ul>
 
-<p>Stories: (strong)</p>
+<p>Story: (strong)</p>
  <ul>
-	 <li>storiesID (primary key)</li>
-	 <li>storiesImage</li>
-	 <li>storiesContent</li>
-	 <li>storiesDate</li>
+	 <li>storyId (primary key)</li>
+	 <li>storyImage</li>
+	 <li>storyContent</li>
+	 <li>storyDate</li>
  </ul>
 
-<p>Highlights: (weak)</p>
+<p>Highlight: (weak)</p>
  <ul>
-	 <li>hightlightsItemsId (foreign key)</li>
-	 <li>highlightsStoriesId (foreign key)</li>
+	 <li>highLightProfileId</li>
+	 <li>hightlightItemsId (foreign key)</li>
+	 <li>highlightStoryId (foreign key)</li>
  </ul>
 
 <p>Relationships:</p>
