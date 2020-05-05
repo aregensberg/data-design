@@ -9,26 +9,29 @@ CREATE TABLE profile(
 	profileId binary (16)not null,
 	profileActivationToken char(32),
 	profileEmail varchar (128) not null,
-	profileHash char(97) not null,
-	profileImage(****)
+	profileHash char(64) not null,
+	profileImage varchar(255),
+	unique(profileEmail),
 	primary key(profileId)
 );
 
 CREATE TABLE story(
 	storyId binary(16) not null,
-	storyProfileId,
-	storyContent,
-	storyDate,
+	storyProfileId binary (16) not null,
+	storyContent char(200),
+	storyDate date(3) not null,
+	index(storyProfileId),
 	foreign key(storyProfileId) references profile(profileId),
 	primary key(storyId)
 	);
 
 CREATE TABLE item(
 	itemId binary(16) not null,
-	itemStoryId,
-	itemImage,
+	itemStoryId binary(16) not null,
+	itemImage varchar(255),
 	itemDate date(3) not null,
 	itemPrice decimal(3,2) not null,
+	index(itemStoryId),
 	foreign key(itemStoryId) references story(storyId),
 	primary key(itemId)
 );
@@ -36,6 +39,8 @@ CREATE TABLE item(
 CREATE TABLE highlight(
 	hightlightProfileId binary(16) not null,
 	highlightStoryId binary(16) not null,
+	index(highlightProfileId),
+	index(highlightStoryId),
 	foreign key(highlightProfileId) references profile(profileId),
 	foreign key(highlightStoryId) references story(storyId)
 );
