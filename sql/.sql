@@ -19,7 +19,7 @@ CREATE TABLE story(
 	storyId binary(16) not null,
 	storyProfileId binary (16) not null,
 	storyContent char(200) not null ,
-	storyDate datetime(3) not null,
+	storyDate DATE not null,
 	index(storyProfileId),
 	foreign key(storyProfileId) references profile(profileId),
 	primary key(storyId)
@@ -29,7 +29,7 @@ CREATE TABLE item(
 	itemId binary(16) not null,
 	itemStoryId binary(16) not null,
 	itemImage varchar(255),
-	itemDate datetime(3) not null,
+	itemDate DATE not null,
 	itemPrice decimal(5,2) not null,
 	index(itemStoryId),
 	foreign key(itemStoryId) references story(storyId),
