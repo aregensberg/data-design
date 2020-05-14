@@ -29,5 +29,10 @@ DELETE FROM profile WHERE primaryKey = UNHEX ("85f109c512674f979a22c3350cd49f28"
 SELECT profileId, profileActivationToken, profileEmail, profileHash, profileImage FROM profile WHERE profileId = UNHEX("aae93a33773c4baf9fde95eb657cdd80");
 
 
-/* SELECT tweet.tweetId, tweet.tweetProfileId, tweet.tweetContent, tweet.tweetDate FROM tweet INNER JOIN profile on tweet.tweetProfileId = profile.profileId where tweet.tweetContent = "California"*/
+/* select-inner join
+ SELECT tweet.tweetId, tweet.tweetProfileId, tweet.tweetContent, tweet.tweetDate FROM tweet INNER JOIN profile on tweet.tweetProfileId = profile.profileId where tweet.tweetContent = "California"*/
 SELECT profile.profileId, profile.profileEmail, profile.profileImage, story.storyDate FROM profile INNER JOIN story on profile.profileId = story.storyProfileId WHERE profile.profileEmail = "GoGo@gmail.com";
+
+/* DDC Example*/
+Write a select statement based off of DDC-Twitter that counts the number of likes for a specific tweet.
+SELECT likeProfileId, likeTweetId, likeDate FROM like Where tweetId = UNHEX('')
